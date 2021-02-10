@@ -1,0 +1,32 @@
+#my bioinformatics project
+#Laurel Nave-Powers
+#instructions from Calder Atta
+
+#Step 1
+#I started with raw data in my raw data folder (../Desktop/GitHub/Laurel_genes/raw)
+#These are compressed fastq files from exon capture, one for forward (R1)
+#and one for reverse (R2).
+#Before I do anything else, I need to unzip them using:
+gunzip -k *.fastq.gz
+#I don't need to merge lanes because my samples were only run once.
+
+#Step 2
+#Now I need to trim adapters.
+#To use the perl script trim_adapter.pl the input files must be in .fq NOT .fastq so I need to run:
+mv "$file" "$(basename "$file" .fastq).fq"
+#This should give an output of .fq
+#Before running the perl script, check the options and make sure it works by using:
+trim_adaptor.pl -h
+#To run the script, go to your home directory and run:
+trim_adaptor.pl \
+--raw_reads inputfile \
+--trimmed outputfile
+#The output will be in the directory trimmed. It will also give report files "trimmed_reads_bases_count.txt"
+#and "trimming_report/sample_name_trimming_report.txt".
+#These supplemental report files can be cleaned up and put into a new directory "trimmed_supp":
+mkdir 2_trimmed_supp
+mv trimmed_reads_bases_count.txt 2_trimmed_supp/
+mv trimming_report 2_trimmed_supp/
+
+#Step 3
+#Now it's time to assemble.
