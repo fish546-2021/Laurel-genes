@@ -41,4 +41,6 @@ Next I will take the output from Step 3 and use it as input in the script ubxand
 
 ### Step 5 - SNP variants
 Once I have the parsed reads, I can map them to our fully assembled sequences to get SNP variants. 
+To find SNPs I might be able to use `samtools mpileup -no-BAQ -region ####-#### -fastaref name.fasta name.bam`. 
+To view the SNPs I could use `samtools tview`. 
 
