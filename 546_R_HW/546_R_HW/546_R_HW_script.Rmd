@@ -1,0 +1,29 @@
+---
+title: "546_R_HW"
+author: "Laurel Nave-Powers"
+date: "2/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## This homework involves writing a script that performs a task on a number of files. 
+## When you trim the adaptors from raw reads, you also get supplemental materials as output. My script will take the tables in the supplemental files and combine them into one. 
+
+## First, read in the data and name each file. 
+```{r}
+hipplat_1 <- read.csv("../data/HIPPLAT_NEF95054_S2_R1_supp_table.csv")
+hipplat_2 <- read.csv("../data/HIPPLAT_NEF95054_S2_R2_supp_table.csv")
+micpaci_1 <- read.csv("../data/MICPACI_UW157426_S7_R1_supp_table.csv")
+micpaci_2 <- read.csv("../data/MICPACI_UW157426_S7_R2_supp_table.csv")
+```
+## Let's take a look at what some of the data looks like by using head. 
+```{r}
+head(hipplat_1)
+```
+## Now that the data is read in and we have an idea of what it looks like and what the column headings are, we can combine them. 
+```{r}
+combined <- c(hipplat_1, hipplat_2, micpaci_1, micpaci_2)
+head(combined) 
+```
