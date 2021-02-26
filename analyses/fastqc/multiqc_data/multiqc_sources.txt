@@ -1,0 +1,5 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	HIPPLAT_NEF95054_S2_R2	/Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/analyses/fastqc/HIPPLAT_NEF95054_S2_R2_fastqc.zip
+FastQC	all_sections	MICPACI_UW157426_S7_R1	/Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/analyses/fastqc/MICPACI_UW157426_S7_R1_fastqc.zip
+FastQC	all_sections	MICPACI_UW157426_S7_R2	/Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/analyses/fastqc/MICPACI_UW157426_S7_R2_fastqc.zip
+FastQC	all_sections	HIPPLAT_NEF95054_S2_R1	/Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/analyses/fastqc/HIPPLAT_NEF95054_S2_R1_fastqc.zip

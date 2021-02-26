@@ -1,0 +1,5 @@
+Sample	FastQC_mqc-generalstats-fastqc-percent_duplicates	FastQC_mqc-generalstats-fastqc-percent_gc	FastQC_mqc-generalstats-fastqc-avg_sequence_length	FastQC_mqc-generalstats-fastqc-percent_fails	FastQC_mqc-generalstats-fastqc-total_sequences
+HIPPLAT_NEF95054_S2_R1	94.30125281055497	49.0	155.0	27.27272727272727	15515103.0
+HIPPLAT_NEF95054_S2_R2	86.21729324496651	55.0	155.0	27.27272727272727	15515103.0
+MICPACI_UW157426_S7_R1	94.25480207493827	49.0	155.0	9.090909090909092	16491261.0
+MICPACI_UW157426_S7_R2	86.18563499931238	55.0	155.0	27.27272727272727	16491261.0
