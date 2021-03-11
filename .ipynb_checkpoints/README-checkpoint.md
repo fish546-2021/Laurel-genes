@@ -1,8 +1,7 @@
 # Bioinformatics 2021 Class Project
 ## Laurel Nave-Powers 
-#### Instructions modified from Calder Atta 
-https://github.com/calderatta/ca-exon-capture 
 
+### Data
 The data used in this project are raw reads of flatfish exon capture data from Calder Atta. I am using two species: Hippoglossoides platessoides and Microstomus pacificus. The end goal of the project is to be able to look at SNP variants for these samples.
 
 ### Step 1 - Unzipping
@@ -10,7 +9,7 @@ I started with raw data in my raw data folder `../data/raw`.
 These are compressed fastq files from exon capture, one file for forward (R1) and one for reverse (R2) for each species. To take a look at them, they need to be unzipped (see 01_unzip.ipynb). For these samples, I don't need to merge lanes because they were only run once.
 
 ### Step 2 - Trimming
-The next step is to trim adaptors and low quality bases (see 02_trim.ipynb). To use the perl script trim_adaptor.pl the input files must be in .fq NOT .fastq. Once changed, the .fq files are moved into their own folder `../data/demultiplexed`. 
+The next step is to trim adaptors and low quality bases (see 02_trim.ipynb). This step is modified from Calder Atta (https://github.com/calderatta/ca-exon-capture). To use the perl script trim_adaptor.pl the input files must be in .fq NOT .fastq. Once changed, the .fq files are moved into their own folder `../data/demultiplexed`. 
 Before running the perl script, check the options and make sure it works by using `trim_adaptor.pl -h`.
 In order for the script to work, there are 6 perl modules and two packages to be downloaded into the @INC. 
 
@@ -25,20 +24,15 @@ Before running the script, activate the cutadapt environment and change director
 Then run the script! 
 The output will be where you specify it, in this case in the directory `../analyses/trimmed`. It will also give supplemental report files that can be put into a new directory `../analyses/trimmed_supp`. 
 
-### Step 3 - Remove duplicate reads from PCR
-Now that the data is trimmed it's time to remove the duplicate reads from PCR (see 03_rmdup.ipynb). First I will download the script rmdup.pl and put it in the same location as all of the modules and packages `/Users/laurelnave-powers/opt/miniconda3/lib/5.32.0/darwin-thread-multi-2level`.  
+### Step 3 - Alignment
+Now the trimmed reads need to be aligned to a reference genome (see 05_bowtie.ipynb). The reference genome used for this project is Danio rerio downloaded from https://uswest.ensembl.org/Danio_rerio/Info/Index.  
+This step uses the program bowtie2, which can be downloaded from http://bowtie-bio.sourceforge.net/bowtie2/index.shtml. 
+The first thing to do is build an index from the reference genome. Then using that index and your trimmed reads from Step 2, you can get SAM alignment files. This will also tell you the overall alignment rate. 
 
-To check that the script will work and has all required programs use `rmdup.pl -h`. 
-Install all required programs necessary. 
-Run the script! The input will be the trimmed files from the output of Step 2, as well as a sample list. The output will be files with duplicate reads removed. 
-
-### Step 4 - Parse reads to each locus
-Next I will take the output from Step 3 and use it as input in the script ubxandp.pl. This script will parse reads to each locus. As before, the first thing I will do is check that I have all the required modules by using `ubxandp.pl -h`. 
-
-### Step 5 - SNP variants
-Once I have the parsed reads, I can map them to our fully assembled sequences to get SNP variants. 
-To find SNPs I might be able to use `samtools mpileup -no-BAQ -region ####-#### -fastaref name.fasta name.bam`. 
-To view the SNPs I could use `samtools tview`. 
+### Step 4 - SNP variants
+Once the files are aligned, you can call SNPs (see 06_SNP.ipynb). The first thing to do is convert your SAM files to indexed and sorted BAM files. You can use `samtools` to do this, downloaded from http://www.htslib.org/download/. Then taking your sorted BAM file and the reference genome, get VCF files.
+Now you can call the variants using `bcftools`, downloaded from http://www.htslib.org/download/. 
+To view the variants use `zgrep`. This will also show you the quality of each variant. 
 
 
 #### Project Results and Methods: https://docs.google.com/document/d/10w9FyI_e_Mdh8gLQqkYOMof-ve4HF2w1F0opoeYV2-I/edit 
