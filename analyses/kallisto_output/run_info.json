@@ -1,0 +1,13 @@
+{
+	"n_targets": 2,
+	"n_bootstraps": 0,
+	"n_processed": 14959461,
+	"n_pseudoaligned": 0,
+	"n_unique": 0,
+	"p_pseudoaligned": 0.0,
+	"p_unique": 0.0,
+	"kallisto_version": "0.46.2",
+	"index_version": 10,
+	"start_time": "Tue Mar  9 15:07:01 2021",
+	"call": "kallisto quant -i ../data/index_kallisto.idx -t 4 -o kallisto_output trimmed/HIPPLAT_NEF95054_S2_R1.fq trimmed/HIPPLAT_NEF95054_S2_R2.fq"
+}

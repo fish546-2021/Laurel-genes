@@ -11,7 +11,7 @@ These are compressed fastq files from exon capture, one file for forward (R1) an
 ### Step 2 - Trimming
 The next step is to trim adaptors and low quality bases (see 02_trim.ipynb). This step is modified from Calder Atta (https://github.com/calderatta/ca-exon-capture). To use the perl script trim_adaptor.pl the input files must be in .fq NOT .fastq. Once changed, the .fq files are moved into their own folder `../data/demultiplexed`. 
 Before running the perl script, check the options and make sure it works by using `trim_adaptor.pl -h`.
-In order for the script to work, there are 6 perl modules and two packages to be downloaded into the @INC. 
+In order for the script to work, there are six perl modules and two packages to be downloaded into the @INC. 
 
 The modules can be downloaded from the CPAN website (https://metacpan.org) and moved into the folder indicated in the @INC. Modules used:  Moo, Parallel::ForkManager, Sub::Defer, Sub::Quote, Method::Generate::Constructor, Role::Tiny. 
 
@@ -25,12 +25,12 @@ Then run the script!
 The output will be where you specify it, in this case in the directory `../analyses/trimmed`. It will also give supplemental report files that can be put into a new directory `../analyses/trimmed_supp`. 
 
 ### Step 3 - Alignment
-Now the trimmed reads need to be aligned to a reference genome (see 05_bowtie.ipynb). The reference genome used for this project is Danio rerio downloaded from https://uswest.ensembl.org/Danio_rerio/Info/Index.  
-This step uses the program bowtie2, which can be downloaded from http://bowtie-bio.sourceforge.net/bowtie2/index.shtml. 
+Now the trimmed reads need to be aligned to a reference genome (see 04_bowtie.ipynb). The reference genome used for this project is Danio rerio downloaded from https://uswest.ensembl.org/Danio_rerio/Info/Index.  
+This step uses the program bowtie2, which can be downloaded from http://bowtie-bio.sourceforge.net/bowtie2/index.shtml. This should be added to your PATH. 
 The first thing to do is build an index from the reference genome. Then using that index and your trimmed reads from Step 2, you can get SAM alignment files. This will also tell you the overall alignment rate. 
 
 ### Step 4 - SNP variants
-Once the files are aligned, you can call SNPs (see 06_SNP.ipynb). The first thing to do is convert your SAM files to indexed and sorted BAM files. You can use `samtools` to do this, downloaded from http://www.htslib.org/download/. Then taking your sorted BAM file and the reference genome, get VCF files.
+Once the files are aligned, you can call SNPs (see 05_SNP.ipynb). The first thing to do is convert your SAM files to indexed and sorted BAM files. You can use `samtools` to do this, downloaded from http://www.htslib.org/download/. This should be added to your PATH. Then taking your sorted BAM file and the reference genome, get VCF files.
 Now you can call the variants using `bcftools`, downloaded from http://www.htslib.org/download/. 
 To view the variants use `zgrep`. This will also show you the quality of each variant. 
 

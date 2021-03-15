@@ -1,0 +1,169 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/data/demultiplexed/HIPPLAT_NEF95054_S2_R2.fq
+Trimming mode: paired-end
+Trim Galore version: 0.6.6
+Cutadapt version: 3.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC' (user defined)
+Maximum trimming error rate: 0.1 (default)
+Optional adapter 2 sequence (only used for read 2 of paired-end files): 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+
+
+This is cutadapt 3.2 with Python 3.8.6
+Command line parameters: -j 1 -e 0.1 -q 20 -O 1 -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT /Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/data/demultiplexed/HIPPLAT_NEF95054_S2_R2.fq
+Processing reads on 1 core in single-end mode ...
+Finished in 188.07 s (12 µs/read; 4.95 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              15,515,103
+Reads with adapters:                 3,847,238 (24.8%)
+Reads written (passing filters):    15,515,103 (100.0%)
+
+Total basepairs processed: 2,404,840,965 bp
+Quality-trimmed:             162,715,590 bp (6.8%)
+Total written (filtered):  2,236,563,951 bp (93.0%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT; Type: regular 3'; Length: 33; Trimmed: 3847238 times
+
+No. of allowed errors:
+1-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-33 bp: 3
+
+Bases preceding removed adapters:
+  A: 34.7%
+  C: 31.0%
+  G: 23.6%
+  T: 10.6%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	2559059	3878775.8	0	2559059
+2	979501	969693.9	0	979501
+3	242731	242423.5	0	242731
+4	56225	60605.9	0	56225
+5	6436	15151.5	0	6436
+6	772	3787.9	0	772
+7	95	947.0	0	95
+8	47	236.7	0	47
+9	110	59.2	0	49 61
+10	634	14.8	1	301 333
+11	673	3.7	1	615 58
+12	48	0.9	1	12 36
+13	29	0.2	1	23 6
+14	63	0.1	1	58 5
+15	7	0.0	1	6 1
+16	16	0.0	1	15 1
+17	38	0.0	1	33 5
+18	17	0.0	1	17
+19	20	0.0	1	14 6
+20	15	0.0	2	13 2
+21	5	0.0	2	3 1 1
+22	5	0.0	2	5
+23	25	0.0	2	20 5
+24	36	0.0	2	26 8 2
+25	11	0.0	2	9 2
+26	25	0.0	2	22 2 1
+27	17	0.0	2	14 0 3
+28	7	0.0	2	6 0 1
+29	23	0.0	2	17 2 4
+30	15	0.0	3	13 0 1 1
+31	6	0.0	3	3 1 0 2
+32	10	0.0	3	8 2
+33	45	0.0	3	33 9 3
+34	9	0.0	3	5 0 2 2
+35	18	0.0	3	13 2 3
+36	11	0.0	3	10 0 1
+37	21	0.0	3	12 4 1 4
+38	9	0.0	3	4 3 2
+39	7	0.0	3	6 1
+40	8	0.0	3	3 1 2 2
+41	5	0.0	3	3 2
+42	113	0.0	3	97 12 3 1
+43	2	0.0	3	2
+44	4	0.0	3	2 1 0 1
+45	18	0.0	3	16 2
+46	8	0.0	3	5 0 0 3
+47	2	0.0	3	2
+48	5	0.0	3	4 0 0 1
+49	6	0.0	3	2 2 1 1
+50	13	0.0	3	11 1 0 1
+51	6	0.0	3	4 0 0 2
+52	4	0.0	3	2 1 1
+53	9	0.0	3	7 1 0 1
+54	5	0.0	3	3 1 0 1
+55	2	0.0	3	2
+56	6	0.0	3	5 1
+57	3	0.0	3	1 1 1
+58	10	0.0	3	10
+61	8	0.0	3	7 1
+62	14	0.0	3	13 0 0 1
+63	2	0.0	3	1 0 0 1
+64	4	0.0	3	1 2 1
+65	4	0.0	3	2 2
+66	10	0.0	3	7 1 2
+67	4	0.0	3	2 1 0 1
+68	3	0.0	3	2 0 1
+69	1	0.0	3	0 0 1
+71	5	0.0	3	3 2
+72	1	0.0	3	1
+74	7	0.0	3	0 3 1 3
+75	1	0.0	3	0 0 0 1
+76	2	0.0	3	2
+77	2	0.0	3	1 1
+78	3	0.0	3	1 0 2
+79	2	0.0	3	2
+81	1	0.0	3	0 0 1
+82	11	0.0	3	9 1 0 1
+83	2	0.0	3	1 1
+86	3	0.0	3	0 0 2 1
+87	4	0.0	3	1 0 2 1
+88	2	0.0	3	1 1
+90	4	0.0	3	0 1 0 3
+91	6	0.0	3	4 1 1
+92	1	0.0	3	1
+93	6	0.0	3	5 1
+94	2	0.0	3	1 0 1
+95	5	0.0	3	2 1 1 1
+96	1	0.0	3	0 1
+97	1	0.0	3	1
+98	6	0.0	3	3 1 1 1
+99	3	0.0	3	2 1
+100	3	0.0	3	0 2 0 1
+101	2	0.0	3	1 0 0 1
+102	1	0.0	3	0 1
+103	2	0.0	3	0 1 0 1
+105	1	0.0	3	1
+106	3	0.0	3	1 0 1 1
+107	2	0.0	3	0 0 1 1
+108	1	0.0	3	0 0 0 1
+109	1	0.0	3	0 0 0 1
+110	1	0.0	3	0 0 0 1
+112	1	0.0	3	1
+113	1	0.0	3	0 0 1
+115	1	0.0	3	0 0 0 1
+117	1	0.0	3	0 0 0 1
+118	2	0.0	3	1 1
+120	2	0.0	3	1 0 0 1
+121	2	0.0	3	1 1
+122	4	0.0	3	0 0 0 4
+123	2	0.0	3	1 0 1
+124	2	0.0	3	1 0 1
+131	1	0.0	3	0 0 0 1
+136	1	0.0	3	1
+
+RUN STATISTICS FOR INPUT FILE: /Users/laurelnave-powers/Desktop/GitHub/Laurel-genes/data/demultiplexed/HIPPLAT_NEF95054_S2_R2.fq
+=============================================
+15515103 sequences processed in total
+
+Total number of sequences analysed for the sequence pair length validation: 15515103
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 555642 (3.58%)
